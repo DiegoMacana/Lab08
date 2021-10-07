@@ -17,6 +17,7 @@ INTEGRACIÓN DE CAPAS CON GOOGLE GUICE
 
 ---
 
+![image](https://user-images.githubusercontent.com/54339107/136407696-ea01587e-f97a-4b87-b407-0e24777d87df.png)
 
 PARTE I. INICIO EN CLASE
 Actualice el proyecto del taller realizados en el ejercicio anterior. Agregue las clases y excepciones no descritas de ser necesario.

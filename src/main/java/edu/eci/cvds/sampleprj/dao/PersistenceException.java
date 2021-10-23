@@ -6,13 +6,13 @@ public class PersistenceException extends Exception{
     private static final Long SERIALVERSIONUID=1L;
 
 
-    public PersistenceException (String message,Exception e){
+    public PersistenceException (String message, Exception e){
         super(message+e.toString());
 
     }
 
-    public PersistenceException (String message){
-        super(message);
+    public PersistenceException (String msg){
+        super(msg);
 
     }
 

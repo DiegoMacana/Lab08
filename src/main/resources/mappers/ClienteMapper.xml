@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper">
+
+<resultMap type='Cliente' id='ClienteResult'>
+    <id property='documento' column='documento'/>
+    <result property='nombre' column='nombre'/>
+    <result property='telefono' column='telefono'/>
+    <result property='direccion' column='direccion'/>
+    <result property='email' column='email'/>
+    <result property='vetado' column='vetado'/>
+    <collection property='rentados' ofType='ItemRentado' resultMap='ItemRentadoResult'></collection>
+</resultMap>   
+
+<resultMap type='ItemRentado' id='ItemRentadoResult'>
+    <id property='id' column='id_itemRentado'/>
+    <result property='fechainiciorenta' column='fechainiciorenta'/>
+    <result property='fechafinrenta' column='fechafinrenta'/>
+    <association property='item' javaType='Item' resultMap= 'edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper.ItemResult'></association>
+</resultMap>   
+
+<select parameterType="map" id="consultarClientes" resultMap="ClienteResult">
+    select
+    c.nombre,
+    c.documento,
+    c.telefono,
+    c.direccion,
+    c.email,
+    c.vetado
+    FROM VI_CLIENTES as c
+	<if test="idcli !=null">
+		WHERE c.documento = #{idcli}
+	</if>
+</select>
+
+<select parameterType="map" id="consultarCliente" resultMap="ClienteResult">
+    select
+    c.nombre,
+    c.documento,
+    c.telefono,
+    c.direccion,
+    c.email,
+    c.vetado
+    FROM VI_CLIENTES as c
+	<if test="idcli !=null">
+		WHERE c.documento = #{idcli}
+	</if>
+</select>
+
+<insert parameterType="map" id="agregarItemRentadoACliente">
+	INSERT INTO VI_ITEMRENTADO(CLIENTES_documento, ITEMS_id, fechainiciorenta, fechafinrenta) VALUES (#{idIr}, #{iditIr},#{fechainicioIr}, #{fechafinIr})
+</insert>
+
+</mapper>
+

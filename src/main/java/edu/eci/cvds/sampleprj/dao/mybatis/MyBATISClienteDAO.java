@@ -8,7 +8,8 @@ import edu.eci.cvds.samples.entities.ItemRentado;
 
 import java.sql.Date;
 import java.util.List;
-public class MyBATISClienteDAO {
+
+public class MyBATISClienteDAO implements ClienteDAO{
 
     @Inject
     private ClienteMapper clienteMapper;

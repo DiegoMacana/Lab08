@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
+import java.util.*;
 
 
 public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
@@ -151,10 +151,16 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
         }
         return i;
 
-
-
     }
 
+    @Override
+    public void registrarTipoItem(TipoItem tipoItem) throws ExcepcionServiciosAlquiler {
+        if (!tipositems.containsKey(tipoItem.getID())) {
+            tipositems.put(tipoItem.getID(),tipoItem);
+        } else {
+            throw new ExcepcionServiciosAlquiler("El item " + tipoItem.getID() + " ya esta registrado.");
+        }
+    }
 
 
     @Override

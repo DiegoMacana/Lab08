@@ -7,7 +7,7 @@ import java.sql.Date;
 import java.util.List;
 
 public interface ServiciosAlquiler {
-    public abstract int valorMultaRetrasoxDia(int itemId);
+    public abstract int valorMultaRetrasoxDia(int itemId)throws ExcepcionServiciosAlquiler;
     public abstract Cliente consultarCliente(long docu) throws ExcepcionServiciosAlquiler;
     /**
      * @obj Consultar los items que tenga en su poder un cliente
@@ -27,18 +27,18 @@ public interface ServiciosAlquiler {
     /**
      * @obj consultar el valor de la multa del alquiler, dado el id del item
      * alquilado hasta la fecha dada como parametro
-     * @param iditem el codigo del item alquilado
-     * @param fechaDevolucion la fecha de devolucion del item
+     * @paramiditem el codigo del item alquilado
+     * @paramfechaDevolucion la fecha de devolucion del item
      * @return la multa en funcion del numero de dias de retraso. Si el item se
      * entrega en la fecha exacta de entrega, o antes, la multa sera cero.
-     * @throws ExcepcionServiciosAlquiler si el item no existe o no esta
+     * @throwsExcepcionServiciosAlquiler si el item no existe o no esta
      * actualmente alquilado
      */
     public abstract long consultarMultaAlquiler(int iditem, Date fechaDevolucion) throws ExcepcionServiciosAlquiler;
     public abstract TipoItem consultarTipoItem(int id) throws ExcepcionServiciosAlquiler;
     public abstract List<TipoItem> consultarTiposItem() throws ExcepcionServiciosAlquiler;
     /**
-     * @obj rejistrar el alkiler de un item
+     * @obj registrar el alquiler de un item
      * @pre numdias >=1
      * @param date fecha de rejistro del alquiler
      * @param docu identificacion de a quien se le cargara el alquiler
@@ -46,8 +46,7 @@ public interface ServiciosAlquiler {
      * @param numdias el numero de dias que se le prestara el item
      * @pos el item ya no debe estar disponible, y debe estar asignado al
      * cliente
-     * @throws ExcepcionXX si el identificador no corresponde con un item, o si
-     * el mismo ya esta alquilado
+     * @throws ExcepcionServiciosAlquiler si el identificador no corresponde con un item, o si el mismo ya esta alquilado
      */
     public abstract void registrarAlquilerCliente(Date date, long docu, Item item, int numdias) throws ExcepcionServiciosAlquiler;
     public abstract void registrarCliente(Cliente p) throws ExcepcionServiciosAlquiler;
@@ -64,4 +63,5 @@ public interface ServiciosAlquiler {
     public abstract void actualizarTarifaItem(int id, long tarifa) throws ExcepcionServiciosAlquiler;
     public abstract void registrarItem(Item i) throws ExcepcionServiciosAlquiler;
     public abstract void vetarCliente(long docu, boolean estado) throws ExcepcionServiciosAlquiler;
+    public abstract void registrarTipoItem(TipoItem tipoItem)throws  ExcepcionServiciosAlquiler;
 }

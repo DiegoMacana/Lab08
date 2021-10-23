@@ -16,6 +16,9 @@ import edu.eci.cvds.samples.services.ServiciosAlquiler;
 import java.sql.Date;
 import java.util.List;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 
 
 @Singleton
@@ -37,12 +40,12 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
 
     @Override
-    public int valorMultaRetrasoxDia(int itemId)  throws ExceptionServiciosAlquiler{
+    public int valorMultaRetrasoxDia(int itemId)  throws ExcepcionServiciosAlquiler{
         try{
 
             return (int) itemDAO.load(itemId).getTarifaxDia();
         }catch (PersistenceException e){
-            throw new ExceptionServiciosAlquiler ("El ítem no esta registrado",e);
+            throw new ExcepcionServiciosAlquiler ("El ítem no esta registrado",e);
         }
 
 
@@ -173,7 +176,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
             throw new ExcepcionServiciosAlquiler("Error al insertar el tipo de Item "+tipoItem.getID(),e);
         }
     }
-}
+
 
 
     @Override

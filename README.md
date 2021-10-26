@@ -577,7 +577,9 @@ public class ServiciosAlquilerFactory {
 
 }
 Pruebe el programa ‘Main’ suministrado, y con este rectifique que a través de la capa lógica se pueda consultar un cliente.
-
+   
+ ![image](https://user-images.githubusercontent.com/54339107/138972519-0ce7440f-ca53-4847-a353-c8e3b53d5f2b.png)
+   
 Implemente los métodos que sean necesarios en las interfaces de las entidades (DAO) y en sus implementaciones haciendo uso del DAO inyectado. Haga un programa para comprobar que la consulta de un cliente se haga correctamente, a través de la capa lógica.
 ***
 ## PARTE II - PRUEBAS
@@ -673,6 +675,8 @@ public class ServiciosAlquilerTest {
 }
 Cree diferentes pruebas utilizando las clases de equivalencia necesarias para las diferentes operaciones definidas en los servicios.
                                
+
+                              
 ***
                           
                              

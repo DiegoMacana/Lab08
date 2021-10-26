@@ -19,5 +19,8 @@ public class ServiceExample {
         ServiciosAlquiler servicios = ServiciosAlquilerFactory.getInstance().getServiciosAlquiler();
         List<Cliente> clientes=servicios.consultarClientes();
         System.out.println(clientes);
+        System.out.println("---- Cliente -----");
+        Cliente cliente = servicios.consultarCliente(1234);
+        System.out.println(cliente.getNombre());
     }
 }

@@ -12,6 +12,9 @@ public class MyBATISItemDAO implements ItemDAO{
 
     @Inject
     private ItemMapper itemMapper;
+
+    private Item it;
+
     @Override
     public void save(Item it) throws PersistenceException{
         try{
@@ -62,5 +65,12 @@ public class MyBATISItemDAO implements ItemDAO{
         }catch (org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Error al consultar los items disponibles",e);
         }
+    }
+
+    @Override
+    public int valorMultaDia(int itemId) throws PersistenceException {
+            it=load(itemId);
+            return (int)it.getTarifaxDia();
+
     }
 }

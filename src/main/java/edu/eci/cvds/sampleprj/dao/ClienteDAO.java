@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ClienteDAO {
 
-    public Cliente load (int id) throws PersistenceException;
+    public Cliente load (long id) throws PersistenceException;
     List<ItemRentado> loadItemsCliente(int idCliente) throws PersistenceException;
     public void agregarItemRentado(long idcli, int id, Date fechainicio, Date fechafin) throws PersistenceException;
     public List<Cliente> consultarClientes() throws PersistenceException;

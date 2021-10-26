@@ -1,7 +1,6 @@
 package edu.eci.cvds.samples.services.impl;
 
 
-
 import edu.eci.cvds.samples.entities.Cliente;
 import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.samples.entities.ItemRentado;
@@ -9,21 +8,13 @@ import edu.eci.cvds.samples.entities.TipoItem;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
 
-
-
-import java.io.Serializable;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 import java.util.*;
 
 
-public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
+public class ServiciosAlquierItemsStub implements ServiciosAlquiler {
 
 
 
@@ -43,7 +34,7 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
 
 
 
-    public ServiciosAlquilerItemsStub() {
+    public ServiciosAlquierItemsStub() {
         clientes = new HashMap<>();
         itemsDisponibles = new HashMap<>();
         itemsrentados = new HashMap<>();

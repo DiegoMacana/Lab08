@@ -21,4 +21,6 @@ public interface ItemDAO {
 
 
     public List<Item> consultarItemsDisponibles() throws PersistenceException;
+
+    public int valorMultaDia(int itemId) throws PersistenceException;
 }

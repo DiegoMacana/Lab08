@@ -301,7 +301,5 @@ public class ServiciosAlquierItemsStub implements ServiciosAlquiler {
         clientes.put(c2.getDocumento(), c2);
         clientes.put(c3.getDocumento(), c3);
 
-
-
     }
 }

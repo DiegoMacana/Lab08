@@ -19,7 +19,7 @@ public class MyBATISClienteDAO implements ClienteDAO{
         try {
             return clienteMapper.consultarCliente((int)id);
         } catch (org.apache.ibatis.exceptions.PersistenceException e) {
-            throw new PersistenceException("Error al consultar el Clinete con el id: " + id, e);
+            throw new PersistenceException("Error al consultar el Cliente con el id: " + id, e);
         }
     }
 

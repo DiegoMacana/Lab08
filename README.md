@@ -671,8 +671,12 @@ public class ServiciosAlquilerTest {
     }
 }
 Cree diferentes pruebas utilizando las clases de equivalencia necesarias para las diferentes operaciones definidas en los servicios.
-
+                               
+***
+                          
+                             
 PARTE III - CAPA PRESENTACIÓN
+                               
 Realice los cambios necesarios en el archivo pom.xml de tal forma que el proyecto se construya de manera correcta como una aplicación WEB, incluyendo las dependencias (jstl, jsf-api, jsf-impl, primefaces, etc) y los plugins (maven war, tomcat7 maven, etc.).
 
 Agregue el archivo web.xml requerido con la configuración necesaria. Al final del archivo agregue el siguiente listener:

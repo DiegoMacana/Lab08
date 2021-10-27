@@ -31,7 +31,13 @@ public interface ClienteMapper {
      * @return 
      */
     public List<Cliente> consultarClientes();
-    public void agregarCliente(@Param("cli") Cliente cli);
+    public void agregarCliente(@Param("nombrecli") String nombre,
+                               @Param("documentcli") long documento,
+                               @Param("telcli") String telefono,
+                               @Param("dircli") String direccion,
+                               @Param("emailcli") String email,
+                               @Param("vetadocli") boolean vetado);
+
     public void vetarCliente(@Param("cliente") long idCliente,
                              @Param("estado") int estado);
 }

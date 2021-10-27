@@ -107,7 +107,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
     @Override
     public void registrarCliente(Cliente c) throws ExcepcionServiciosAlquiler {
         try {
-            clienteDAO.save(c);
+            clienteDAO.save(c.getNombre(),c.getDocumento(),c.getTelefono(),c.getDireccion(),c.getEmail(),c.isVetado());
         } catch (PersistenceException ex) {
             throw new ExcepcionServiciosAlquiler("Error al registrar el cliente", ex);
         }

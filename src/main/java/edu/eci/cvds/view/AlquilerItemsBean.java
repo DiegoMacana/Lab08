@@ -22,16 +22,17 @@ public class AlquilerItemsBean extends BasePageBean {
     private String direccion;
     private String email;
     private boolean vetado;
+    private Cliente cliente;
 
     public List<Cliente> consultarclientes() throws ExcepcionServiciosAlquiler{
         return serviciosAlquiler.consultarClientes();
     }
 
     public void registrarcliente(){
-        Cliente cliente=new Cliente(nombre,documento,telefono,direccion,email,vetado,null);
+        Cliente clienter=new Cliente(nombre,documento,telefono,direccion,email,vetado,null);
         try{
 
-           serviciosAlquiler.registrarCliente(cliente);
+           serviciosAlquiler.registrarCliente(clienter);
         }catch(ExcepcionServiciosAlquiler e){
             e.printStackTrace();
         }
@@ -83,6 +84,17 @@ public class AlquilerItemsBean extends BasePageBean {
 
     public void setVetado(boolean vetado) {
         this.vetado = vetado;
+    }
+
+    public Cliente getCliente() throws ExcepcionServiciosAlquiler{
+        if(cliente==null){
+            cliente = serviciosAlquiler.consultarCliente(documento);
+        }
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 }
 

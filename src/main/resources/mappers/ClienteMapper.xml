@@ -54,5 +54,9 @@
 	INSERT INTO VI_ITEMRENTADO(CLIENTES_documento, ITEMS_id, fechainiciorenta, fechafinrenta) VALUES (#{idIr}, #{iditIr},#{fechainicioIr}, #{fechafinIr})
 </insert>
 
+    <insert id="agregarCliente">
+        INSERT INTO VI_CLIENTES (documento,nombre,telefono,direccion,email,vetado)
+        VALUES (#{documentcli},#{nombrecli},#{telcli},#{dircli},#{emailcli},#{vetadocli})
+    </insert>
 </mapper>
 

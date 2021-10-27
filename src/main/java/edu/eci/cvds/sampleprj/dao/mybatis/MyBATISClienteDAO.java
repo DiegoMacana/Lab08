@@ -51,9 +51,9 @@ public class MyBATISClienteDAO implements ClienteDAO{
         }
     }
     @Override
-    public void save(Cliente c) throws PersistenceException {
+    public void save(String nombre, long documento, String telefono, String direccion, String email, boolean vetado) throws PersistenceException {
         try {
-            clienteMapper.agregarCliente(c);
+            clienteMapper.agregarCliente(nombre,documento,telefono,direccion,email,vetado);
         } catch (Exception e) {
             throw new PersistenceException(e.toString(), e);
         }

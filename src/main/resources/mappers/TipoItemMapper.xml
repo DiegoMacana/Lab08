@@ -8,6 +8,8 @@
 <resultMap type='TipoItem' id='TipoItemResult'>
     <id property='id' column='id_tipoItem'/>
     <result property='descripcion' column='descripcion'/>
-</resultMap> 
-                
+</resultMap>
+ <select parameterType="map" id="getTiposItems" resultMap="TipoItemResult">
+   SELECT * FROM VI_TIPOITEM
+ </select>
 </mapper>

@@ -79,7 +79,7 @@ import org.junit.Test;
                     r = true;
                 }
                 // Validate no Client was found;
-                Assert.assertTrue(r);
+                Assert.assertFalse(r);
             };
 
         }

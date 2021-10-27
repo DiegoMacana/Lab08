@@ -775,6 +775,8 @@ Construya y despliegue la aplicación con el comando mvn tomcat7:run y realice p
 Modifique la configuración de Guice para asociar a la interfaz, el servicio concreto de alquileres, de forma que todos los cambios que se realicen en la presentación, se actualicen en base de datos de manera correcta.
 
 Realice los ajustes necesarios para que la aplicación funcione de manera correcta y se asegure que todos los métodos están realizando las operaciones sobre la base de datos.
+ ![image](https://user-images.githubusercontent.com/54339107/138984344-48526d31-2fe0-427a-9fcf-c4f46a85d787.png)
+
 
 PARTE IV - ENTREGA CONTINUA
 Realice toda la configuración necesaria de CircleCI y Heroku para que la aplicación se construya y despliegue de manera automática cada que se realice un commit al repositorio.
